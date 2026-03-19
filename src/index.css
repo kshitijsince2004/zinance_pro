@@ -1,0 +1,570 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-family: "Inter", sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 120 100% 25%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 0 0% 10%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 25 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 120 100% 25%;
+    --chart-1: 0 0% 0%;
+    --chart-2: 120 100% 25%;
+    --chart-3: 25 100% 50%;
+    --chart-4: 0 0% 50%;
+    --chart-5: 0 0% 75%;
+    --radius: 0.5rem;
+  }
+
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 120 100% 25%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 120 100% 25%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Theme colors */
+:root {
+  --black: #000000;
+  --green: #16a34a;
+  --orange: #ea580c;
+  --white: #ffffff;
+  --gray-dark: #171717;
+  --gray-medium: #404040;
+  --gray-light: #a3a3a3;
+  --text-primary: #ffffff;
+  --text-secondary: #d1d5db;
+  --text-muted: #9ca3af;
+  --bg-card: rgba(23, 23, 23, 0.8);
+  --bg-glass: rgba(23, 23, 23, 0.95);
+  --border-primary: rgba(64, 64, 64, 0.3);
+  --border-glass: rgba(64, 64, 64, 0.3);
+}
+
+.light {
+  --black: #ffffff;
+  --green: #16a34a;
+  --orange: #ea580c;
+  --white: #000000;
+  --gray-dark: #f8f9fa;
+  --gray-medium: #e9ecef;
+  --gray-light: #6c757d;
+  --text-primary: #000000;
+  --text-secondary: #374151;
+  --text-muted: #6b7280;
+  --bg-card: rgba(255, 255, 255, 0.9);
+  --bg-glass: rgba(255, 255, 255, 0.95);
+  --border-primary: rgba(229, 231, 235, 0.8);
+  --border-glass: rgba(229, 231, 235, 0.8);
+}
+
+body {
+  background: var(--black);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+/* Text color utilities */
+.text-primary {
+  color: var(--text-primary) !important;
+}
+
+.text-secondary {
+  color: var(--text-secondary) !important;
+}
+
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
+/* Navigation text fixes */
+.nav-link-text {
+  color: var(--text-primary) !important;
+}
+
+.nav-link-active {
+  color: var(--green) !important;
+}
+
+/* Sidebar specific text fixes */
+.sidebar-text {
+  color: var(--text-primary) !important;
+}
+
+.sidebar-text-muted {
+  color: var(--text-muted) !important;
+}
+
+/* Override specific Tailwind classes for theme consistency */
+.text-white {
+  color: var(--text-primary) !important;
+}
+
+.text-gray-300 {
+  color: var(--text-secondary) !important;
+}
+
+.text-gray-400 {
+  color: var(--text-muted) !important;
+}
+
+.text-zinc-300 {
+  color: var(--text-secondary) !important;
+}
+
+.text-zinc-400 {
+  color: var(--text-muted) !important;
+}
+
+.text-slate-50 {
+  color: var(--text-primary) !important;
+}
+
+/* Background utilities */
+.bg-card {
+  background: var(--bg-card) !important;
+}
+
+/* Glass effects */
+.glass-effect {
+  background: var(--bg-glass) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-glass) !important;
+}
+
+.glass-card {
+  background: var(--bg-card) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-primary) !important;
+}
+
+.glass-sidebar {
+  background: var(--bg-glass) !important;
+  backdrop-filter: blur(10px);
+  border-right: 1px solid var(--border-primary) !important;
+}
+
+/* Clean animations */
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(10px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+/* Enhanced dropdown and popover styles */
+[data-radix-popper-content-wrapper] {
+  z-index: 9999 !important;
+}
+
+.bg-popover, 
+[data-radix-select-content],
+[data-radix-popover-content] {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-primary) !important;
+  backdrop-filter: blur(10px) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Calendar styling */
+.rdp {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-primary) !important;
+  backdrop-filter: blur(10px) !important;
+  color: var(--text-primary) !important;
+}
+
+.rdp-day_selected {
+  background-color: var(--green) !important;
+  color: var(--white) !important;
+}
+
+.rdp-day:hover {
+  background-color: rgba(22, 163, 74, 0.2) !important;
+}
+
+/* Form input styling */
+input[type="file"] {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+input[type="file"]::file-selector-button {
+  background: var(--green) !important;
+  color: var(--white) !important;
+  border: none !important;
+  padding: 8px 16px !important;
+  margin-right: 16px !important;
+  border-radius: 4px !important;
+  font-weight: 500;
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.2s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+}
+
+/* Status badges */
+.status-active {
+  background: var(--green) !important;
+  color: var(--white) !important;
+  font-weight: 600;
+}
+
+.status-warning {
+  background: var(--orange) !important;
+  color: var(--white) !important;
+  font-weight: 600;
+}
+
+.status-expired {
+  background: #dc2626 !important;
+  color: var(--white) !important;
+  font-weight: 600;
+}
+
+/* Remove all shadows and glow effects */
+button,
+.btn,
+[role="button"] {
+  box-shadow: none !important;
+  text-shadow: none !important;
+  filter: none !important;
+  transition: all 0.2s ease;
+}
+
+button:hover,
+.btn:hover,
+[role="button"]:hover {
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+/* Button text colors */
+.btn-futuristic {
+  color: var(--text-secondary) !important;
+}
+
+.btn-futuristic:hover {
+  color: var(--text-primary) !important;
+}
+
+/* Modern table styling */
+.table-modern {
+  border-collapse: separate;
+  border-spacing: 0;
+  color: var(--text-primary) !important;
+}
+
+.table-modern th,
+.table-modern td {
+  border-bottom: 1px solid var(--border-primary);
+  color: var(--text-primary) !important;
+}
+
+.table-modern tr:hover {
+  background: rgba(64, 64, 64, 0.3) !important;
+}
+
+.light .table-modern tr:hover {
+  background: rgba(229, 231, 235, 0.5) !important;
+}
+
+/* Badge text fixes */
+.badge-text {
+  color: var(--text-primary) !important;
+}
+
+/* Notification center fixes */
+.notification-text {
+  color: var(--text-primary) !important;
+}
+
+/* Light mode comprehensive fixes */
+.light .text-gray-300,
+.light .text-zinc-300 {
+  color: #374151 !important;
+}
+
+.light .text-gray-400,
+.light .text-zinc-400 {
+  color: #6b7280 !important;
+}
+
+/* Fix all dark backgrounds in light mode */
+.light .bg-black {
+  background: #ffffff !important;
+}
+
+.light .bg-black\/80 {
+  background: rgba(255, 255, 255, 0.9) !important;
+}
+
+.light .bg-black\/60 {
+  background: rgba(255, 255, 255, 0.8) !important;
+}
+
+.light .bg-black\/40 {
+  background: rgba(255, 255, 255, 0.6) !important;
+}
+
+.light .bg-gray-900 {
+  background: #ffffff !important;
+}
+
+.light .bg-gray-800 {
+  background: #f9fafb !important;
+}
+
+.light .bg-gray-700 {
+  background: #f3f4f6 !important;
+}
+
+.light .bg-gray-600 {
+  background: #e5e7eb !important;
+}
+
+.light .bg-zinc-900 {
+  background: #ffffff !important;
+}
+
+.light .bg-zinc-800 {
+  background: #f9fafb !important;
+}
+
+.light .bg-zinc-700 {
+  background: #f3f4f6 !important;
+}
+
+.light .bg-zinc-600 {
+  background: #e5e7eb !important;
+}
+
+.light .bg-slate-900 {
+  background: #ffffff !important;
+}
+
+.light .bg-slate-800 {
+  background: #f9fafb !important;
+}
+
+.light .bg-slate-700 {
+  background: #f3f4f6 !important;
+}
+
+/* Fix borders in light mode */
+.light .border-gray-800,
+.light .border-gray-700,
+.light .border-gray-600 {
+  border-color: #e5e7eb !important;
+}
+
+.light .border-zinc-800,
+.light .border-zinc-700,
+.light .border-zinc-600 {
+  border-color: #e5e7eb !important;
+}
+
+.light .border-green-500\/20,
+.light .border-green-500\/30 {
+  border-color: rgba(34, 197, 94, 0.3) !important;
+}
+
+/* Fix table headers and cells in light mode */
+.light th,
+.light td {
+  color: var(--text-primary) !important;
+}
+
+.light .text-gray-300,
+.light .text-gray-400,
+.light .text-zinc-300,
+.light .text-zinc-400 {
+  color: #374151 !important;
+}
+
+/* Input fixes for light mode */
+.light input,
+.light textarea,
+.light select {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border-color: #d1d5db !important;
+}
+
+.light input::placeholder,
+.light textarea::placeholder {
+  color: #6b7280 !important;
+}
+
+/* Card and component backgrounds in light mode */
+.light [class*="bg-black"],
+.light [class*="bg-gray-9"],
+.light [class*="bg-gray-8"],
+.light [class*="bg-zinc-9"],
+.light [class*="bg-zinc-8"] {
+  background: var(--bg-card) !important;
+}
+
+/* Ensure proper contrast for all text elements in light mode */
+.light h1,
+.light h2,
+.light h3,
+.light h4,
+.light h5,
+.light h6,
+.light p,
+.light span,
+.light div,
+.light label {
+  color: var(--text-primary) !important;
+}
+
+/* Scroll bar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-card);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-light);
+}
+
+/* Responsive utilities */
+@media (max-width: 640px) {
+  .responsive-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .responsive-flex {
+    flex-direction: column !important;
+  }
+  
+  .responsive-text {
+    font-size: 0.875rem !important;
+  }
+}
+
+/* Clean focus states */
+*:focus {
+  outline: 2px solid var(--green) !important;
+  outline-offset: 2px !important;
+}
+
+*:focus:not(:focus-visible) {
+  outline: none !important;
+}
+
+/* Dropdown and select fixes for light mode */
+.light [data-radix-select-trigger],
+.light [data-radix-select-content] {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border-color: #d1d5db !important;
+}
+
+/* Button fixes for light mode */
+.light .btn-futuristic,
+.light button[variant="outline"] {
+  color: #000000 !important;
+  border-color: #d1d5db !important;
+}
+
+.light .btn-futuristic:hover {
+  background: #f3f4f6 !important;
+  color: #000000 !important;
+}

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="14" fill="#1e2a4a"/>
+  <!-- Z shape: top bar, diagonal, bottom bar -->
+  <line x1="16" y1="18" x2="48" y2="18" stroke="#4fc3f7" stroke-width="6" stroke-linecap="round"/>
+  <line x1="48" y1="18" x2="16" y2="46" stroke="#4fc3f7" stroke-width="6" stroke-linecap="round"/>
+  <line x1="16" y1="46" x2="48" y2="46" stroke="#4fc3f7" stroke-width="6" stroke-linecap="round"/>
+</svg>
